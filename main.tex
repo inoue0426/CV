@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage[scale=0.92]{sourcesanspro}
-\usepackage[letterpaper,left=0.70in,right=0.70in,top=0.58in,bottom=0.58in]{geometry}
+\usepackage[letterpaper,left=0.70in,right=0.70in,top=0.56in,bottom=0.58in]{geometry}
 \usepackage{microtype}
 \usepackage{ragged2e}
 \usepackage{tabularx}
@@ -22,7 +22,6 @@
 \definecolor{accent}{HTML}{244A73}
 \definecolor{muted}{HTML}{69737D}
 \definecolor{rule}{HTML}{D9DEE3}
-\definecolor{soft}{HTML}{F5F7F9}
 
 \hypersetup{
   colorlinks=true,
@@ -36,8 +35,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\tabcolsep}{0pt}
-\setlist[itemize]{leftmargin=1.15em,itemsep=1.2pt,topsep=2pt,parsep=0pt,partopsep=0pt}
-\setlist[enumerate]{leftmargin=1.55em,itemsep=4.0pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=1.0pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=3.1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -50,7 +49,7 @@
   {\needspace{4\baselineskip}\large\sffamily\bfseries\color{accent}}
   {}{0pt}{}
   [\vspace{-3pt}\color{rule}\titlerule]
-\titlespacing*{\section}{0pt}{10pt}{5pt}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
 
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
 \newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
@@ -66,11 +65,11 @@
 \newcommand{\pub}[4]{%
   \item {#1}\\[-1pt]
   {\textbf{#2}}\\[-1pt]
-  {\small\itshape #3}\if\relax\detokenize{#4}\relax\else{\small\sffamily\color{muted}\enspace #4}\fi
+  {\small\itshape #3}\if\relax\detokenize{#4}\relax\else{\small\sffamily\color{muted}, #4}\fi
 }
 
 \newcommand{\focus}[2]{%
-  \textbf{\sffamily #1}\quad #2
+  \textbf{\sffamily\color{accent}#1}\enspace #2\par\vspace{2pt}
 }
 
 \newcommand{\me}{\textbf{Inoue, Y.}}
@@ -82,7 +81,7 @@
 \begin{tabularx}{\textwidth}{@{}Y R{2.55in}@{}}
   {\fontsize{27}{29}\selectfont\bfseries Yoshitaka Inoue} &
   {\small\sffamily\color{muted}Bethesda, Maryland}\\[2pt]
-  {\large\sffamily\color{accent}Machine Learning for Biomedical and Therapeutic Response} &
+  {\large\sffamily\color{accent}Machine Learning for Drug Discovery and Therapeutic Response} &
   {\small\href{mailto:inoue.yoshitaka.iv1@gmail.com}{inoue.yoshitaka.iv1@gmail.com}}\\[5pt]
   {\small\textbf{University of Minnesota} \enspace | \enspace Computer Science and Engineering} &
   {\small\href{https://inoue0426.github.io/}{inoue0426.github.io}}\\[-1pt]
@@ -95,7 +94,7 @@
 \vspace{6pt}
 
 \begin{tabularx}{\textwidth}{@{}>{\sffamily\small\bfseries\color{accent}}p{1.05in}Y@{}}
-Research interests & Representation learning; graph and structured ML; therapeutic response and perturbation modeling; pharmacogenomics; causal and generative modeling.\\
+Research interests & Representation learning; graph and structured ML; therapeutic response and perturbation modeling; pharmacogenomics; interpretable, causal, and generative modeling.\\
 \end{tabularx}
 
 % ==================== APPOINTMENTS ====================
@@ -103,15 +102,27 @@ Research interests & Representation learning; graph and structured ML; therapeut
 \entry{National Institutes of Health (NLM / NCI)}{2024--present}{Pre-doctoral Fellow, cancer pharmacogenomics and biomedical machine learning}{Bethesda, MD}
 \entry{University of Minnesota}{Expected May 2027}{PhD Candidate, Computer Science and Engineering}{Minneapolis, MN}
 
+% ==================== RESEARCH ====================
+\section{Research Focus and Selected Projects}
+\focus{Representation learning}{Learning molecular, cellular, and patient-state representations that preserve treatment-relevant variation and generalize across biological contexts.}
+\focus{Perturbation / response}{Modeling response to therapeutic and genetic interventions, including uncertainty, distributional change, and context shift.}
+\focus{Structured / causal ML}{Using biological graphs, mechanistic structure, and causal assumptions for interpretable prediction and intervention reasoning.}
+\vspace{1pt}
+\begin{itemize}
+  \item \textbf{Current representation-learning work} -- treatment-conditioned latent prediction for patient and cellular response.
+  \item \textbf{DrugAgent} -- multi-agent aggregation of heterogeneous and conflicting biomedical evidence for drug discovery and repurposing.
+  \item \textbf{drGT / GraphPINE} -- graph-based, interpretable drug-response modeling using drug-cell-gene structure and gene-level attribution.
+\end{itemize}
+
 % ==================== PUBLICATIONS ====================
 \section{Selected Publications}
 \begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.}]
-  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.}{Scientific Reports}{under revision, 2026}
+  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.}{Scientific Reports}{2026, under revision}
   \pub{\me, Lee, H., Fu, T., Kuang, R., \& Luna, A.}{drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network.}{BMC Bioinformatics}{2026}
-  \pub{\me, Hao, N., Lu, Y., Fu, T., \& Luna, A.}{Drug Discovery in the Era of Artificial Intelligence: From Target Identification to Clinical Trials.}{Health Data Science}{accepted, 2026}
+  \pub{\me, Hao, N., Lu, Y., Fu, T., \& Luna, A.}{Drug Discovery in the Era of Artificial Intelligence: From Target Identification to Clinical Trials.}{Health Data Science}{2026, accepted}
   \pub{Hoshi-Kadonosawa, Y., Reinhold, W. C., Taniyama, D., \me, Luna, A., Kumar, S., Sun, N.-Y., Kim, Y. S., Yin, J., Roper, N., Sowalsky, A. G., Figg, W. D., Takebe, N., \& Pommier, Y.}{TRPM4 Expression as a Predictive Biomarker and a Mechanistic Driver of Acetalax Activity in Prostate Cancer: Preclinical Efficacy Studies.}{Molecular Cancer Therapeutics}{2026}
   \pub{Elloumi, F., Reinhold, W. C., Varma, S., Wang, Y., Kinali, M., Arakawa, Y., \me, Aladjem, M. I., Pommier, Y., \& Luna, A.}{CellMiner cross-database (CellMinerCDB) version 2.2 for explorations of patient-derived cancer cell line pharmacogenomics.}{Nucleic Acids Research}{2026}
-  \pub{Taniyama, D., \me, Elloumi, F., Kim, Y. S., Rooper, N., Seibert, C., Kelly, M., Labanov, A., Aladjem, M. I., Luna, A., \& Pommier, Y.}{Spontaneous dynamic gene expression of Schlafen 11 (SLFN11) demonstrated by single-cell RNA sequencing in clonal cancer cell lines.}{Oncogene}{submitted, 2026}
+  \pub{Taniyama, D., \me, Elloumi, F., Kim, Y. S., Rooper, N., Seibert, C., Kelly, M., Labanov, A., Aladjem, M. I., Luna, A., \& Pommier, Y.}{Spontaneous dynamic gene expression of Schlafen 11 (SLFN11) demonstrated by single-cell RNA sequencing in clonal cancer cell lines.}{Oncogene}{2026, submitted}
 \end{enumerate}
 
 \section{Conference and Workshop Papers}
@@ -127,19 +138,6 @@ Research interests & Representation learning; graph and structured ML; therapeut
 \end{enumerate}
 
 % ==================== PAGE 2 ====================
-\section{Research Focus and Selected Projects}
-\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.58in}Y@{}}
-Representation learning & Predictive representations of molecular, cellular, and patient state, with emphasis on treatment-relevant variation and generalization across biological contexts.\\[4pt]
-Perturbation / response & Modeling response to therapeutic and genetic interventions, including uncertainty, distributional change, and context shift.\\[4pt]
-Structured / causal ML & Using biological graphs, mechanistic structure, and causal assumptions to support interpretable prediction and intervention reasoning.
-\end{tabularx}
-\vspace{5pt}
-\begin{itemize}
-  \item \textbf{Current representation-learning work} -- treatment-conditioned latent prediction for patient and cellular response.
-  \item \textbf{DrugAgent} -- multi-agent aggregation of heterogeneous and conflicting biomedical evidence for drug discovery and repurposing.
-  \item \textbf{drGT / GraphPINE} -- graph-based, interpretable drug-response modeling using drug-cell-gene structure and gene-level attribution.
-\end{itemize}
-
 \section{Selected Presentations}
 \entry{International Conference on Intelligent Systems for Molecular Biology (ISMB)}{2026}{Oral presentations: drGT (NetBio) and DrugAgent (Text Mining); additional Student Council Symposium presentations}{ }
 \entry{NIH Artificial Intelligence Symposium}{2025}{Presentation on attention-guided gene assessment for drug-response modeling}{Bethesda, MD}
