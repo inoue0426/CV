@@ -1,160 +1,170 @@
 \documentclass[10pt,letterpaper]{article}
 
+% --- Typography and page ---
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[letterpaper,margin=0.56in,top=0.48in,bottom=0.52in]{geometry}
+\usepackage{libertinus}
+\usepackage[scale=0.92]{sourcesanspro}
+\usepackage[letterpaper,left=0.70in,right=0.70in,top=0.58in,bottom=0.58in]{geometry}
 \usepackage{microtype}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{enumitem}
+\usepackage{ragged2e}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage{ragged2e}
-\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{needspace}
 
-\definecolor{navy}{HTML}{17365D}
-\definecolor{ink}{HTML}{1F2933}
-\definecolor{muted}{HTML}{5E6A75}
-\definecolor{rule}{HTML}{D5DBE1}
-\definecolor{linkblue}{HTML}{1F5A94}
+% --- Palette ---
+\definecolor{ink}{HTML}{20252B}
+\definecolor{accent}{HTML}{244A73}
+\definecolor{muted}{HTML}{69737D}
+\definecolor{rule}{HTML}{D9DEE3}
+\definecolor{soft}{HTML}{F5F7F9}
 
 \hypersetup{
   colorlinks=true,
-  urlcolor=linkblue,
-  linkcolor=linkblue,
+  urlcolor=accent,
+  linkcolor=accent,
   pdfauthor={Yoshitaka Inoue},
   pdftitle={Yoshitaka Inoue - Curriculum Vitae}
 }
 
+% --- Global spacing ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=1.2pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=4.0pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[C]{\small\color{muted}Yoshitaka Inoue \enspace--\enspace Curriculum Vitae \enspace--\enspace \thepage}
+\fancyfoot[L]{\scriptsize\sffamily\color{muted}Yoshitaka Inoue}
+\fancyfoot[R]{\scriptsize\sffamily\color{muted}Curriculum Vitae \enspace \thepage/\pageref*{LastPage}}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-\setstretch{0.985}
-\setlist[itemize]{leftmargin=1.25em,itemsep=0.8pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
-\setlist[enumerate]{leftmargin=1.45em,itemsep=2pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
-
+% --- Section system ---
 \titleformat{\section}
-  {\large\bfseries\color{navy}}
+  {\needspace{4\baselineskip}\large\sffamily\bfseries\color{accent}}
   {}{0pt}{}
-  [\vspace{-4pt}\color{rule}\titlerule]
-\titlespacing*{\section}{0pt}{7pt}{3.5pt}
+  [\vspace{-3pt}\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
 
-\newcommand{\cvitem}[4]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X>{\RaggedLeft\arraybackslash}p{1.45in}@{}}
-  \textbf{#1} & \textcolor{muted}{#2}\\
-  \textit{#3} & \textcolor{muted}{#4}
-  \end{tabularx}\vspace{1pt}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+
+% --- Reusable components ---
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Y R{1.15in}@{}}
+    {\bfseries #1} & {\sffamily\small\color{muted}#2}\\[-1pt]
+    {\itshape #3} & {\sffamily\small\color{muted}#4}
+  \end{tabularx}\vspace{2pt}
 }
 
-\newcommand{\pub}[1]{\item #1}
+\newcommand{\pub}[4]{%
+  \item {#1}\\[-1pt]
+  {\textbf{#2}}\\[-1pt]
+  {\small\itshape #3}\if\relax\detokenize{#4}\relax\else{\small\sffamily\color{muted}\enspace #4}\fi
+}
+
+\newcommand{\focus}[2]{%
+  \textbf{\sffamily #1}\quad #2
+}
+
 \newcommand{\me}{\textbf{Inoue, Y.}}
 
 \begin{document}
+\color{ink}
 
-% Header
-{\fontsize{25}{28}\selectfont\bfseries\color{ink} Yoshitaka Inoue}\\[-1pt]
-{\large\color{navy} Machine Learning for Therapeutic Response Modeling}\\[4pt]
-
-\begin{tabularx}{\textwidth}{@{}X r@{}}
-\textbf{PhD Candidate, Computer Science and Engineering, University of Minnesota} & Bethesda, MD\\
-\textbf{Pre-doctoral Fellow, NLM / NCI, National Institutes of Health} & Expected PhD: May 2027
-\end{tabularx}
-\vspace{3pt}
-\small
-\href{mailto:inoue.yoshitaka.iv1@gmail.com}{inoue.yoshitaka.iv1@gmail.com}
-\enspace $\cdot$ \enspace
-\href{https://inoue0426.github.io/}{inoue0426.github.io}
-\enspace $\cdot$ \enspace
-\href{https://github.com/inoue0426}{github.com/inoue0426}
-\enspace $\cdot$ \enspace
-\href{https://scholar.google.co.jp/citations?user=aBizyLkAAAAJ\&hl=en}{Google Scholar}
-\enspace $\cdot$ \enspace
-\href{https://orcid.org/0000-0003-4432-8166}{ORCID}
-\normalsize
-
-\section{Research Profile}
-I develop \textbf{representation learning and structured machine learning methods for therapeutic response modeling} across molecular, cellular, and patient contexts. My work connects interpretable graph models, pharmacogenomics, perturbation modeling, and biomedical reasoning, with an emphasis on methods that remain useful under heterogeneous evidence and biological context shifts.
-
-\section{Research Appointments}
-\cvitem{National Institutes of Health (NLM / NCI)}{Bethesda, MD}{Pre-doctoral Fellow}{2024--present}
-\begin{itemize}
-  \item Conduct computational research in cancer pharmacogenomics, therapeutic response modeling, and biomedical machine learning in an NIH research environment.
-  \item Collaborate across computational and experimental groups on drug response, molecular biomarkers, and pharmacogenomic resources.
-\end{itemize}
-
-\cvitem{University of Minnesota}{Minneapolis, MN}{PhD Candidate, Computer Science and Engineering}{PhD expected May 2027}
-\begin{itemize}
-  \item Develop machine learning methods spanning graph representation learning, interpretable drug-response prediction, single-cell modeling, and treatment-conditioned representation learning.
-\end{itemize}
-
-\section{Education}
-\cvitem{University of Minnesota}{Minneapolis, MN}{PhD, Computer Science and Engineering}{Expected May 2027}
-
-\section{Research Directions}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries\color{navy}}p{1.75in}X@{}}
-Representation learning & Learning robust molecular, cellular, and patient-state representations that preserve treatment-relevant variation and generalize across biological contexts.\\[3pt]
-Perturbation / response modeling & Modeling how therapeutic or genetic interventions change biological state, with emphasis on distributional response, uncertainty, and out-of-context generalization.\\[3pt]
-Structured / causal modeling & Incorporating biological graphs, mechanistic structure, and causal assumptions to improve interpretability, intervention reasoning, and transport across contexts.
+% ==================== HEADER ====================
+\begin{tabularx}{\textwidth}{@{}Y R{2.55in}@{}}
+  {\fontsize{27}{29}\selectfont\bfseries Yoshitaka Inoue} &
+  {\small\sffamily\color{muted}Bethesda, Maryland}\\[2pt]
+  {\large\sffamily\color{accent}Machine Learning for Biomedical and Therapeutic Response} &
+  {\small\href{mailto:inoue.yoshitaka.iv1@gmail.com}{inoue.yoshitaka.iv1@gmail.com}}\\[5pt]
+  {\small\textbf{University of Minnesota} \enspace | \enspace Computer Science and Engineering} &
+  {\small\href{https://inoue0426.github.io/}{inoue0426.github.io}}\\[-1pt]
+  {\small\textbf{National Institutes of Health} \enspace | \enspace NLM / NCI} &
+  {\small\href{https://scholar.google.co.jp/citations?user=aBizyLkAAAAJ\&hl=en}{Google Scholar} \enspace | \enspace \href{https://orcid.org/0000-0003-4432-8166}{ORCID} \enspace | \enspace \href{https://github.com/inoue0426}{GitHub}}
 \end{tabularx}
 
+\vspace{6pt}
+\color{rule}\hrule height 1.1pt\color{ink}
+\vspace{6pt}
+
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\small\bfseries\color{accent}}p{1.05in}Y@{}}
+Research interests & Representation learning; graph and structured ML; therapeutic response and perturbation modeling; pharmacogenomics; causal and generative modeling.\\
+\end{tabularx}
+
+% ==================== APPOINTMENTS ====================
+\section{Appointments and Education}
+\entry{National Institutes of Health (NLM / NCI)}{2024--present}{Pre-doctoral Fellow, cancer pharmacogenomics and biomedical machine learning}{Bethesda, MD}
+\entry{University of Minnesota}{Expected May 2027}{PhD Candidate, Computer Science and Engineering}{Minneapolis, MN}
+
+% ==================== PUBLICATIONS ====================
 \section{Selected Publications}
-\begin{enumerate}[label={\arabic*.}]
-  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T. \textbf{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.} \textit{Scientific Reports}, under revision, 2026.}
-  \pub{\me, Lee, H., Fu, T., Kuang, R., \& Luna, A. \textbf{drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network.} \textit{BMC Bioinformatics}, 2026.}
-  \pub{\me, Hao, N., Lu, Y., Fu, T., \& Luna, A. \textbf{Drug Discovery in the Era of Artificial Intelligence: From Target Identification to Clinical Trials.} \textit{Health Data Science}, accepted, 2026.}
-  \pub{Hoshi-Kadonosawa, Y., Reinhold, W. C., Taniyama, D., \me, Luna, A., Kumar, S., Sun, N.-Y., Kim, Y. S., Yin, J., Roper, N., Sowalsky, A. G., Figg, W. D., Takebe, N., \& Pommier, Y. \textbf{TRPM4 Expression as a Predictive Biomarker and a Mechanistic Driver of Acetalax Activity in Prostate Cancer: Preclinical Efficacy Studies.} \textit{Molecular Cancer Therapeutics}, 2026.}
-  \pub{Elloumi, F., Reinhold, W. C., Varma, S., Wang, Y., Kinali, M., Arakawa, Y., \me, Aladjem, M. I., Pommier, Y., \& Luna, A. \textbf{CellMiner cross-database (CellMinerCDB) version 2.2 for explorations of patient-derived cancer cell line pharmacogenomics.} \textit{Nucleic Acids Research}, 2026.}
-  \pub{Taniyama, D., \me, Elloumi, F., Kim, Y. S., Rooper, N., Seibert, C., Kelly, M., Labanov, A., Aladjem, M. I., Luna, A., \& Pommier, Y. \textbf{Spontaneous dynamic gene expression of Schlafen 11 (SLFN11) demonstrated by single-cell RNA sequencing in clonal cancer cell lines.} \textit{Oncogene}, submitted, 2026.}
+\begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.}]
+  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.}{Scientific Reports}{under revision, 2026}
+  \pub{\me, Lee, H., Fu, T., Kuang, R., \& Luna, A.}{drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network.}{BMC Bioinformatics}{2026}
+  \pub{\me, Hao, N., Lu, Y., Fu, T., \& Luna, A.}{Drug Discovery in the Era of Artificial Intelligence: From Target Identification to Clinical Trials.}{Health Data Science}{accepted, 2026}
+  \pub{Hoshi-Kadonosawa, Y., Reinhold, W. C., Taniyama, D., \me, Luna, A., Kumar, S., Sun, N.-Y., Kim, Y. S., Yin, J., Roper, N., Sowalsky, A. G., Figg, W. D., Takebe, N., \& Pommier, Y.}{TRPM4 Expression as a Predictive Biomarker and a Mechanistic Driver of Acetalax Activity in Prostate Cancer: Preclinical Efficacy Studies.}{Molecular Cancer Therapeutics}{2026}
+  \pub{Elloumi, F., Reinhold, W. C., Varma, S., Wang, Y., Kinali, M., Arakawa, Y., \me, Aladjem, M. I., Pommier, Y., \& Luna, A.}{CellMiner cross-database (CellMinerCDB) version 2.2 for explorations of patient-derived cancer cell line pharmacogenomics.}{Nucleic Acids Research}{2026}
+  \pub{Taniyama, D., \me, Elloumi, F., Kim, Y. S., Rooper, N., Seibert, C., Kelly, M., Labanov, A., Aladjem, M. I., Luna, A., \& Pommier, Y.}{Spontaneous dynamic gene expression of Schlafen 11 (SLFN11) demonstrated by single-cell RNA sequencing in clonal cancer cell lines.}{Oncogene}{submitted, 2026}
 \end{enumerate}
 
 \section{Conference and Workshop Papers}
-\begin{enumerate}[label={\arabic*.}]
-  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T. \textbf{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.} ICML 2026 Workshop on Foundation Models for the Life Sciences (FM4LS), 2026.}
-  \pub{\me, Fu, T., \& Luna, A. \textbf{GraphPINE: Graph Importance Propagation for Interpretable Drug Response Prediction.} ICLR 2025 Workshop on Machine Learning for Genomics Explorations (MLGenX), 2025.}
-  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T. \textbf{DrugAgent: Explainable Drug Repurposing Agent with Large Language Model-based Reasoning.} ICLR 2025 Workshop on Machine Learning for Genomics Explorations (MLGenX), 2025.}
+\begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.}]
+  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.}{ICML Workshop on Foundation Models for the Life Sciences (FM4LS)}{2026}
+  \pub{\me, Fu, T., \& Luna, A.}{GraphPINE: Graph Importance Propagation for Interpretable Drug Response Prediction.}{ICLR Workshop on Machine Learning for Genomics Explorations (MLGenX)}{2025}
+  \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Explainable Drug Repurposing Agent with Large Language Model-based Reasoning.}{ICLR Workshop on Machine Learning for Genomics Explorations (MLGenX)}{2025}
 \end{enumerate}
 
-\section{Preprints}
-\begin{enumerate}[label={\arabic*.}]
-  \pub{\me, Kulman, E., \& Kuang, R. \textbf{BiGCN: Leveraging Cell and Gene Similarities for Single-cell Transcriptome Imputation with Bi-Graph Convolutional Networks.} \textit{bioRxiv}, 2024.}
+\section{Preprint}
+\begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.}]
+  \pub{\me, Kulman, E., \& Kuang, R.}{BiGCN: Leveraging Cell and Gene Similarities for Single-cell Transcriptome Imputation with Bi-Graph Convolutional Networks.}{bioRxiv}{2024}
 \end{enumerate}
 
-\section{Selected Research Projects}
+% ==================== PAGE 2 ====================
+\section{Research Focus and Selected Projects}
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.58in}Y@{}}
+Representation learning & Predictive representations of molecular, cellular, and patient state, with emphasis on treatment-relevant variation and generalization across biological contexts.\\[4pt]
+Perturbation / response & Modeling response to therapeutic and genetic interventions, including uncertainty, distributional change, and context shift.\\[4pt]
+Structured / causal ML & Using biological graphs, mechanistic structure, and causal assumptions to support interpretable prediction and intervention reasoning.
+\end{tabularx}
+\vspace{5pt}
 \begin{itemize}
-  \item \textbf{Treatment-Conditioned Representation Learning} --- Ongoing work on predictive latent representations for patient and cellular response under therapeutic intervention.
-  \item \textbf{DrugAgent} --- Multi-agent aggregation of heterogeneous and conflicting biomedical evidence for drug discovery and repurposing.
-  \item \textbf{drGT} --- Interpretable drug-response modeling over a drug-cell-gene heterogeneous network with attention-guided gene assessment.
+  \item \textbf{Current representation-learning work} -- treatment-conditioned latent prediction for patient and cellular response.
+  \item \textbf{DrugAgent} -- multi-agent aggregation of heterogeneous and conflicting biomedical evidence for drug discovery and repurposing.
+  \item \textbf{drGT / GraphPINE} -- graph-based, interpretable drug-response modeling using drug-cell-gene structure and gene-level attribution.
 \end{itemize}
 
 \section{Selected Presentations}
-\begin{itemize}
-  \item \textbf{ISMB 2026}: oral presentations of drGT (NetBio) and DrugAgent (Text Mining), with additional Student Council Symposium presentations.
-  \item \textbf{NIH Artificial Intelligence Symposium, 2025}: presentation of attention-guided gene assessment for drug-response modeling.
-  \item \textbf{ICLR MLGenX, 2025}: presentations of GraphPINE and DrugAgent.
-\end{itemize}
+\entry{International Conference on Intelligent Systems for Molecular Biology (ISMB)}{2026}{Oral presentations: drGT (NetBio) and DrugAgent (Text Mining); additional Student Council Symposium presentations}{ }
+\entry{NIH Artificial Intelligence Symposium}{2025}{Presentation on attention-guided gene assessment for drug-response modeling}{Bethesda, MD}
+\entry{ICLR Workshop on Machine Learning for Genomics Explorations (MLGenX)}{2025}{Presentations of GraphPINE and DrugAgent}{ }
 
 \section{Honors and Fellowships}
 \begin{itemize}
   \item \textbf{NIH Pre-Doctoral Research Fellowship}, 2024--present.
-  \item \textbf{Outstanding Postgraduate Fellow Finalist}, 26th Annual CCR-FYI Colloquium, 2026 (one of four finalists).
+  \item \textbf{Outstanding Postgraduate Fellow Finalist}, 26th Annual CCR-FYI Colloquium, 2026; one of four finalists.
   \item \textbf{Research Visit Scholarships}, NAIST / JASSO support for research visits at UC Davis, 2018--2019.
 \end{itemize}
 
 \section{Academic Service}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries\RaggedRight\arraybackslash}p{1.62in}X@{}}
-Journal reviewing & IEEE/ACM Transactions on Computational Biology and Bioinformatics (2025--2026); Nature Computational Science (co-reviewer, 2026).\\[3pt]
-Conference reviewing & ACM BCB (2023); ICML Workshop on Foundation Models for the Life Sciences (2026); ICML Workshop on Generative Biology (2026); IEEE BIBM (2026).\\[3pt]
-Mentoring / open source & Google Summer of Code contributor (2022) and mentor (2023--2024); support for biomedical machine-learning and PyTorch Geometric projects.\\[3pt]
-Professional memberships & International Society for Computational Biology (ISCB); American Association for Cancer Research (AACR); American Society of Clinical Oncology (ASCO).
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.42in}Y@{}}
+Journal reviewing & IEEE/ACM Transactions on Computational Biology and Bioinformatics (2025--2026); Nature Computational Science (co-reviewer, 2026).\\[4pt]
+Conference reviewing & ACM BCB (2023); ICML Workshop on Foundation Models for the Life Sciences (2026); ICML Workshop on Generative Biology (2026); IEEE BIBM (2026).\\[4pt]
+Mentoring / OSS & Google Summer of Code contributor (2022) and mentor (2023--2024); support for biomedical machine-learning and PyTorch Geometric projects.\\[4pt]
+Memberships & International Society for Computational Biology (ISCB); American Association for Cancer Research (AACR); American Society of Clinical Oncology (ASCO).
 \end{tabularx}
 
-\section{Technical Profile}
-\textbf{Methods:} representation learning, graph neural networks, heterogeneous graphs, interpretable ML, generative modeling; \textbf{Biomedical ML:} drug-response prediction, pharmacogenomics, single-cell transcriptomics, perturbation modeling; \textbf{Software:} Python, PyTorch, PyTorch Geometric, Linux, Docker, Git.
+\section{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.42in}Y@{}}
+Methods & Representation learning; graph neural networks; heterogeneous graphs; interpretable ML; generative modeling.\\[3pt]
+Biomedical ML & Drug-response prediction; pharmacogenomics; single-cell transcriptomics; perturbation modeling.\\[3pt]
+Software & Python; PyTorch; PyTorch Geometric; Linux; Docker; Git.
+\end{tabularx}
 
 \end{document}
