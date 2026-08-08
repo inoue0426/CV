@@ -1,0 +1,34 @@
+name: Build CV
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.tex"
+      - ".github/workflows/build-cv.yml"
+  pull_request:
+    paths:
+      - "**/*.tex"
+      - ".github/workflows/build-cv.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+
+      - name: Upload compiled PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: Yoshitaka-Inoue-CV
+          path: main.pdf
+          if-no-files-found: error
