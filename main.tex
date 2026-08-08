@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage[scale=0.92]{sourcesanspro}
-\usepackage[letterpaper,left=0.70in,right=0.70in,top=0.54in,bottom=0.56in]{geometry}
+\usepackage[letterpaper,left=0.68in,right=0.68in,top=0.48in,bottom=0.50in]{geometry}
 \usepackage{microtype}
 \usepackage{ragged2e}
 \usepackage{tabularx}
@@ -35,8 +35,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\tabcolsep}{0pt}
-\setlist[itemize]{leftmargin=1.15em,itemsep=0.8pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
-\setlist[enumerate]{leftmargin=1.55em,itemsep=2.7pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.4pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=1.3pt,topsep=1pt,parsep=0pt,partopsep=0pt}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -46,34 +46,34 @@
 
 % --- Section system ---
 \titleformat{\section}
-  {\needspace{3\baselineskip}\large\sffamily\bfseries\color{accent}}
+  {\needspace{2.5\baselineskip}\large\sffamily\bfseries\color{accent}}
   {}{0pt}{}
-  [\vspace{-3pt}\color{rule}\titlerule]
-\titlespacing*{\section}{0pt}{7pt}{3.5pt}
+  [\vspace{-3.5pt}\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{5.2pt}{2.6pt}
 
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
 \newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
 
 % --- Reusable components ---
 \newcommand{\datedentry}[4]{%
-  \begin{tabularx}{\textwidth}{@{}>{\sffamily\small\color{muted}}p{1.18in}Y@{}}
-    #1 & {\bfseries #2}\if\relax\detokenize{#3}\relax\else\enspace {\itshape #3}\fi\\[-1pt]
+  \begin{tabularx}{\textwidth}{@{}>{\sffamily\small\color{muted}}p{1.12in}Y@{}}
+    #1 & {\bfseries #2}\if\relax\detokenize{#3}\relax\else\enspace {\itshape #3}\fi\\[-1.5pt]
        & {\small #4}
-  \end{tabularx}\vspace{2pt}
+  \end{tabularx}\vspace{1.1pt}
 }
 
 \newcommand{\pub}[4]{%
-  \needspace{4\baselineskip}%
-  \item {#1}\\[-1pt]
-  {\textbf{#2}}\\[-1pt]
+  \needspace{3\baselineskip}%
+  \item {#1}\\[-1.8pt]
+  {\textbf{#2}}\\[-1.8pt]
   {\small\itshape #3}\if\relax\detokenize{#4}\relax\else{\small\sffamily\color{muted}, #4}\fi
 }
 
 \newcommand{\entry}[4]{%
-  \begin{tabularx}{\textwidth}{@{}Y R{1.18in}@{}}
-    {\bfseries #1} & {\sffamily\small\color{muted}#2}\\[-1pt]
-    {\itshape #3} & {\sffamily\small\color{muted}#4}
-  \end{tabularx}\vspace{1.5pt}
+  \begin{tabularx}{\textwidth}{@{}Y R{1.10in}@{}}
+    {\bfseries #1} & {\sffamily\small\color{muted}#2}\\[-1.5pt]
+    {\small\itshape #3} & {\sffamily\small\color{muted}#4}
+  \end{tabularx}\vspace{1pt}
 }
 
 \newcommand{\me}{\textbf{Inoue, Y.}}
@@ -82,35 +82,35 @@
 \color{ink}
 
 % ==================== HEADER ====================
-\begin{tabularx}{\textwidth}{@{}Y R{2.55in}@{}}
-  {\fontsize{27}{29}\selectfont\bfseries Yoshitaka Inoue} &
-  {\small\sffamily\color{muted}Bethesda, Maryland}\\[2pt]
+\begin{tabularx}{\textwidth}{@{}Y R{2.48in}@{}}
+  {\fontsize{26}{28}\selectfont\bfseries Yoshitaka Inoue} &
+  {\small\sffamily\color{muted}Bethesda, Maryland}\\[1.5pt]
   {\large\sffamily\color{accent}Machine Learning for Molecular Medicine and Therapeutic Response} &
-  {\small\href{mailto:inoue.yoshitaka.iv1@gmail.com}{inoue.yoshitaka.iv1@gmail.com}}\\[5pt]
+  {\small\href{mailto:inoue.yoshitaka.iv1@gmail.com}{inoue.yoshitaka.iv1@gmail.com}}\\[3.5pt]
   {\small\textbf{University of Minnesota} \enspace | \enspace Computer Science and Engineering} &
   {\small\href{https://inoue0426.github.io/}{inoue0426.github.io}}\\[-1pt]
   {\small\textbf{National Institutes of Health} \enspace | \enspace NLM / NCI} &
   {\small\href{https://scholar.google.co.jp/citations?user=aBizyLkAAAAJ\&hl=en}{Google Scholar} \enspace | \enspace \href{https://orcid.org/0000-0003-4432-8166}{ORCID} \enspace | \enspace \href{https://github.com/inoue0426}{GitHub}}
 \end{tabularx}
 
-\vspace{5pt}
+\vspace{4pt}
 \color{rule}\hrule height 1.1pt\color{ink}
-\vspace{5pt}
+\vspace{3.8pt}
 
-\begin{tabularx}{\textwidth}{@{}>{\sffamily\small\bfseries\color{accent}}p{1.05in}Y@{}}
-Research interests & Machine learning for molecular medicine; graph neural networks; drug response prediction; single-cell and perturbation modeling; intervention-aware representation learning; LLM-based biomedical reasoning.\\
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\small\bfseries\color{accent}}p{1.02in}Y@{}}
+Research interests & Machine learning for molecular medicine; graph neural networks; drug response and perturbation modeling; single-cell analysis; intervention-aware representation learning; LLM-based biomedical reasoning.\\
 \end{tabularx}
 
 % ==================== EDUCATION ====================
 \section{Education}
-\datedentry{2021--present}{University of Minnesota, Twin Cities}{PhD Candidate, Computer Science and Engineering}{Research: graph representation learning, interpretable drug-response prediction, single-cell modeling, intervention-aware representation learning, and LLM-based biomedical reasoning. Advisor: Prof. Rui Kuang; Co-advisor: Dr. Augustin Luna (NIH). Expected graduation: September 2027.}
-\datedentry{2017--2019}{Nara Institute of Science and Technology}{M.Eng., Information Science}{Research: computational prediction and annotation of small molecules from tandem mass spectrometry (MS/MS) data, in collaboration with the UC Davis Genome Center and DataLab. Advisor: Prof. Shigehiko Kanaya. Nara, Japan.}
-\datedentry{Summer 2018}{University of California, Davis}{Visiting Scholar, Genome Center and DataLab}{Collaborative research on MS/MS-based compound prediction and metabolomics data analysis. Advisors: Prof. Oliver Fiehn and Tobias Kind. Davis, CA.}
-\datedentry{2012--2017}{Kumamoto University}{B.Sc., Biological Science}{Research: experimental analysis of seagrass metabolism, including molecular biology experiments and Northern blotting. Advisor: Prof. Susumu Takio. Kumamoto, Japan.}
+\datedentry{2021--present}{University of Minnesota, Twin Cities}{PhD Candidate, Computer Science and Engineering}{Graph representation learning, interpretable drug-response prediction, single-cell modeling, intervention-aware representation learning, and LLM-based biomedical reasoning. Advisor: Prof. Rui Kuang; Co-advisor: Dr. Augustin Luna (NIH). Expected graduation: September 2027.}
+\datedentry{2017--2019}{Nara Institute of Science and Technology}{M.Eng., Information Science}{Computational prediction and annotation of small molecules from tandem mass spectrometry (MS/MS), in collaboration with the UC Davis Genome Center and DataLab. Advisor: Prof. Shigehiko Kanaya.}
+\datedentry{Summer 2018}{University of California, Davis}{Visiting Scholar, Genome Center and DataLab}{MS/MS-based compound prediction and metabolomics data analysis. Advisors: Prof. Oliver Fiehn and Tobias Kind.}
+\datedentry{2012--2017}{Kumamoto University}{B.Sc., Biological Science}{Experimental analysis of seagrass metabolism using molecular biology methods. Advisor: Prof. Susumu Takio.}
 
 % ==================== EXPERIENCE ====================
 \section{Research and Professional Experience}
-\datedentry{2024--present}{National Library of Medicine / National Cancer Institute, NIH}{Pre-doctoral Fellow}{Developing graph neural network and multi-agent AI frameworks for drug-response prediction, drug-target reasoning, and biomedical evidence integration using pharmacogenomic, single-cell, high-throughput screening, cancer cell-line, and patient datasets.}
+\datedentry{2024--present}{National Library of Medicine / National Cancer Institute, NIH}{Pre-doctoral Fellow}{Developing graph neural network and multi-agent AI frameworks for drug-response prediction, drug-target reasoning, and biomedical evidence integration across pharmacogenomic, single-cell, high-throughput screening, cancer cell-line, and patient datasets.}
 \datedentry{2022--2024}{Google Summer of Code}{Contributor (2022); Mentor (2023--2024)}{Contributed a drug-response prediction pipeline and mentored projects involving PyTorch Geometric datasets and multi-tool LLM aggregation.}
 \datedentry{2019--2021}{FreakOut, Inc.}{Machine Learning Engineer}{Applied machine learning to click-through-rate prediction in Tokyo, Japan.}
 
@@ -139,7 +139,7 @@ Research interests & Machine learning for molecular medicine; graph neural netwo
 
 % ==================== PAGE 2 ====================
 \section{Selected Presentations}
-\entry{International Conference on Intelligent Systems for Molecular Biology (ISMB)}{2026}{Two accepted oral presentations at ISMB 2026: drGT in NetBio and DrugAgent in Text Mining; both also presented at the Student Council Symposium.}{Washington, DC}
+\entry{International Conference on Intelligent Systems for Molecular Biology (ISMB)}{2026}{Two accepted oral presentations: drGT in NetBio and DrugAgent in Text Mining; both also presented at the Student Council Symposium.}{Washington, DC}
 \entry{26th Annual CCR-FYI Colloquium}{2026}{drGT oral presentation; selected as one of four Outstanding Postgraduate Fellow Finalists}{Rockville, MD}
 \entry{NIH Artificial Intelligence Symposium}{2025}{drGT: attention-guided gene assessment for drug-response modeling}{Rockville, MD}
 
@@ -151,17 +151,17 @@ Research interests & Machine learning for molecular medicine; graph neural netwo
 \end{itemize}
 
 \section{Academic Service and Memberships}
-\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.42in}Y@{}}
-Journal reviewing & IEEE/ACM Transactions on Computational Biology and Bioinformatics (2025--2026); Nature Computational Science (co-reviewer, 2026).\\[3pt]
-Conference reviewing & ACM BCB (2023); ICML Workshop on Foundation Models for the Life Sciences (2026); ICML Workshop on Generative Biology (2026); IEEE BIBM (2026); ACM SIGSPATIAL (2026).\\[3pt]
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.38in}Y@{}}
+Journal reviewing & IEEE/ACM Transactions on Computational Biology and Bioinformatics (2025--2026); Nature Computational Science (co-reviewer, 2026).\\[2pt]
+Conference reviewing & ACM BCB (2023); ICML Workshop on Foundation Models for the Life Sciences (2026); ICML Workshop on Generative Biology (2026); IEEE BIBM (2026); ACM SIGSPATIAL (2026).\\[2pt]
 Memberships & International Society for Computational Biology (ISCB); American Association for Cancer Research (AACR); American Society of Clinical Oncology (ASCO).
 \end{tabularx}
 
 \section{Technical Skills}
-\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.42in}Y@{}}
-ML / AI & Graph neural networks; graph representation learning; LLM-based agents; interpretable machine learning.\\[3pt]
-Computational biology & Pharmacogenomics; biological networks; single-cell RNA-seq; multi-omics analysis.\\[3pt]
-Programming & Python; PyTorch; PyTorch Geometric; scikit-learn; pandas; NumPy.\\[3pt]
+\begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\color{accent}}p{1.38in}Y@{}}
+ML / AI & Graph neural networks; graph representation learning; LLM-based agents; interpretable machine learning.\\[2pt]
+Computational biology & Pharmacogenomics; biological networks; single-cell RNA-seq; multi-omics analysis.\\[2pt]
+Programming & Python; PyTorch; PyTorch Geometric; scikit-learn; pandas; NumPy.\\[2pt]
 Infrastructure & Git; Linux; Jupyter; Slurm; GPU computing; HPC environments; LangChain.
 \end{tabularx}
 
