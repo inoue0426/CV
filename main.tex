@@ -85,7 +85,7 @@
 \begin{tabularx}{\textwidth}{@{}Y R{2.48in}@{}}
   {\fontsize{26}{28}\selectfont\bfseries Yoshitaka Inoue} &
   {\small\sffamily\color{muted}Bethesda, Maryland}\\[1.5pt]
-  {\large\sffamily\color{accent}Machine Learning for Molecular Medicine and Therapeutic Response} &
+  {\large\sffamily\color{accent}Machine Learning for Biological Perturbations and Therapeutic Response} &
   {\small\href{mailto:inoue.yoshitaka.iv1@gmail.com}{inoue.yoshitaka.iv1@gmail.com}}\\[3.5pt]
   {\small\textbf{University of Minnesota} \enspace | \enspace Computer Science and Engineering} &
   {\small\href{https://inoue0426.github.io/}{inoue0426.github.io}}\\[-1pt]
@@ -98,25 +98,26 @@
 \vspace{3.8pt}
 
 \begin{tabularx}{\textwidth}{@{}>{\sffamily\small\bfseries\color{accent}}p{1.02in}Y@{}}
-Research interests & Machine learning for molecular medicine; graph neural networks; drug response prediction; single-cell and perturbation modeling; intervention-aware representation learning; LLM-based biomedical reasoning.\\
+Research interests & Machine learning for biological perturbations and therapeutic response; single-cell and functional genomics; intervention-aware representation learning; graph-based biomedical reasoning; LLM-based scientific reasoning.\\
 \end{tabularx}
 
 % ==================== EDUCATION ====================
 \section{Education}
-\datedentry{2021--present}{University of Minnesota, Twin Cities}{PhD Candidate, Computer Science and Engineering}{Research on graph representation learning, interpretable drug-response prediction, single-cell and perturbation modeling, intervention-aware representation learning, and LLM-based biomedical reasoning. Advisor: Prof. Rui Kuang; Co-advisor: Dr. Augustin Luna (NIH). Expected graduation: September 2027.}
+\datedentry{2021--present}{University of Minnesota, Twin Cities}{PhD Candidate, Computer Science and Engineering}{Research on treatment-conditioned perturbation modeling, drug-response prediction, single-cell and functional genomics, graph representation learning, intervention-aware representations, and LLM-based biomedical reasoning. Advisor: Prof. Rui Kuang; Co-advisor: Dr. Augustin Luna (NIH). Expected graduation: September 2027.}
 \datedentry{2017--2019}{Nara Institute of Science and Technology}{M.Eng., Information Science}{Computational prediction and annotation of small molecules from tandem mass spectrometry (MS/MS) data in collaboration with the UC Davis Genome Center and DataLab. Advisor: Prof. Shigehiko Kanaya.}
 \datedentry{Summer 2018}{University of California, Davis}{Visiting Scholar, Genome Center and DataLab}{Collaborative research on MS/MS-based compound prediction and metabolomics data analysis. Advisors: Prof. Oliver Fiehn and Tobias Kind.}
 \datedentry{2012--2017}{Kumamoto University}{B.Sc., Biological Science}{Experimental analysis of seagrass metabolism using molecular biology methods, including Northern blotting. Advisor: Prof. Susumu Takio.}
 
 % ==================== EXPERIENCE ====================
 \section{Research and Professional Experience}
-\datedentry{2024--present}{National Library of Medicine / National Cancer Institute, NIH}{Pre-doctoral Fellow}{Developing graph neural network and multi-agent AI frameworks for drug-response prediction, drug-target reasoning, and biomedical evidence integration using pharmacogenomic, single-cell, high-throughput screening, cancer cell-line, and patient datasets.}
+\datedentry{2024--present}{National Library of Medicine / National Cancer Institute, NIH}{Pre-doctoral Fellow}{Developing machine learning methods for perturbation modeling and therapeutic response prediction, including treatment-conditioned latent-state transition models, graph-based drug-response models, and biomedical reasoning systems across single-cell, pharmacogenomic, high-throughput screening, cancer cell-line, and patient datasets.}
 \datedentry{2022--2024}{Google Summer of Code}{Contributor (2022); Mentor (2023--2024)}{Developed a drug-response prediction pipeline and mentored projects on PyTorch Geometric datasets and multi-tool LLM aggregation for biomedical analysis.}
 \datedentry{2019--2021}{FreakOut, Inc.}{Machine Learning Engineer}{Applied machine learning to click-through-rate prediction in Tokyo, Japan.}
 
 % ==================== PUBLICATIONS ====================
 \section{Selected Publications}
 \begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.}]
+  \pub{\me, Jeong, M., Hero, A., Kuang, R., \& Luna, A.}{PerturbRx: Learning Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction.}{arXiv}{2026; submitted to ICLR 2027}
   \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Reliable Multi-Agent Aggregation under Conflicting Biomedical Evidence.}{Scientific Reports}{2026, under revision}
   \pub{\me, Lee, H., Fu, T., Kuang, R., \& Luna, A.}{drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network.}{BMC Bioinformatics}{2026}
   \pub{\me, Hao, N., Lu, Y., Fu, T., \& Luna, A.}{Drug Discovery in the Era of Artificial Intelligence: From Target Identification to Clinical Trials.}{Health Data Science}{2026, accepted}
@@ -126,7 +127,7 @@ Research interests & Machine learning for molecular medicine; graph neural netwo
 
 % ==================== PAGE 2 ====================
 \section{Selected Publications \normalfont\small (continued)}
-\begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.},start=4]
+\begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.},start=5]
   \pub{Hoshi-Kadonosawa, Y., Reinhold, W. C., Taniyama, D., \me, et al.}{TRPM4 Expression as a Predictive Biomarker and a Mechanistic Driver of Acetalax Activity in Prostate Cancer: Preclinical Efficacy Studies.}{Molecular Cancer Therapeutics}{2026}
   \pub{Elloumi, F., Reinhold, W. C., Varma, S., Wang, Y., Kinali, M., Arakawa, Y., \me, et al.}{CellMiner cross-database (CellMinerCDB) version 2.2 for explorations of patient-derived cancer cell line pharmacogenomics.}{Nucleic Acids Research}{2026}
   \pub{Taniyama, D., \me, Elloumi, F., Kim, Y. S., et al.}{Spontaneous dynamic gene expression of Schlafen 11 (SLFN11) demonstrated by single-cell RNA sequencing in clonal cancer cell lines.}{Oncogene}{2026, submitted}
@@ -139,9 +140,10 @@ Research interests & Machine learning for molecular medicine; graph neural netwo
   \pub{\me, Song, T., Wang, X., Luna, A., \& Fu, T.}{DrugAgent: Explainable Drug Repurposing Agent with Large Language Model-based Reasoning.}{ICLR Workshop on Machine Learning for Genomics Explorations (MLGenX)}{2025}
 \end{enumerate}
 
-\section{Preprint}
+\section{Preprints and Research Software}
 \begin{enumerate}[label={\sffamily\small\color{muted}\arabic*.}]
   \pub{\me, Kulman, E., \& Kuang, R.}{BiGCN: Leveraging Cell and Gene Similarities for Single-cell Transcriptome Imputation with Bi-Graph Convolutional Networks.}{bioRxiv}{2024}
+  \item \textbf{OncoGraph}: open oncology knowledge graph and retrieval benchmark integrating drugs, genes, diseases, clinical trials, Gene Ontology terms, and provenance-linked biomedical evidence. \href{https://github.com/inoue0426/OncoGraph}{github.com/inoue0426/OncoGraph}
 \end{enumerate}
 
 \section{Selected Presentations}
@@ -165,8 +167,8 @@ Memberships & {\small International Society for Computational Biology (ISCB); Am
 
 \section{Technical Skills}
 \begin{tabularx}{\textwidth}{@{}>{\sffamily\bfseries\small\color{accent}}p{1.34in}Y@{}}
-ML / AI & {\small Graph neural networks; graph representation learning; LLM-based agents; interpretable machine learning.}\\[1.5pt]
-Computational biology & {\small Pharmacogenomics; biological networks; single-cell RNA-seq; multi-omics analysis.}\\[1.5pt]
+ML / AI & {\small Perturbation and transition modeling; graph neural networks; representation learning; LLM-based agents; interpretable machine learning.}\\[1.5pt]
+Computational biology & {\small Pharmacogenomics; functional genomics; biological networks; single-cell RNA-seq; therapeutic response modeling; multi-omics analysis.}\\[1.5pt]
 Programming & {\small Python; PyTorch; PyTorch Geometric; scikit-learn; pandas; NumPy.}\\[1.5pt]
 Infrastructure & {\small Git; Linux; Jupyter; Slurm; GPU computing; HPC environments; LangChain.}
 \end{tabularx}
