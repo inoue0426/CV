@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v4
@@ -39,12 +41,21 @@ jobs:
       - name: Commit compiled PDF to main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Preserve the generated artifact, then sync to the current tip of main.
+          cp main.pdf /tmp/main.pdf
+          git fetch origin main
+          git checkout -B main origin/main
+          cp /tmp/main.pdf main.pdf
+
           git add main.pdf
           if git diff --cached --quiet; then
             echo "main.pdf is unchanged"
             exit 0
           fi
+
           git commit -m "Update compiled CV PDF"
-          git push
+          git push origin HEAD:main
